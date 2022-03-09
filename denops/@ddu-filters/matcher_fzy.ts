@@ -6,8 +6,8 @@ import {
 import {
   BaseFilter,
   DduItem,
-} from "https://deno.land/x/ddu_vim@v0.14/types.ts#^";
-import { Denops } from "https://deno.land/x/ddu_vim@v0.14/deps.ts#^";
+} from "https://deno.land/x/ddu_vim@v0.14/types.ts";
+import { Denops } from "https://deno.land/x/ddu_vim@v0.14/deps.ts";
 
 type Params = {
   hlGroup: string;
