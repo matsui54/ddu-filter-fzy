@@ -27,7 +27,12 @@ export class Filter extends BaseFilter<Params> {
   }): Promise<DduItem[]> {
     const input = args.input;
     if (!input.length) {
-      return Promise.resolve(args.items);
+      return Promise.resolve(args.items.map((item) => {
+        item.highlights = item.highlights?.filter((h) =>
+          h.name != "ddu_fzy_hl"
+        );
+        return item;
+      }));
     }
     const filtered = args.items.filter((i) => hasMatch(input, i.word));
     if (filtered.length > 10000) {
